@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(langNmae){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}` 
+        document.querySelector(".langauage").appendChild(li)
+    }
+    addLang("python")
+    addLang("typescript")
+    
+    //better approach no traversal
+    function addOptLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)    
+        }
+        addOptLanguage("golang")
+
+        //EDIT
+        const secondLang = document.querySelector("li:nth-child(2)")
+        //console.log(secondLang);
+        
+        //secondLang.innerHTML = "Mojo"
+        const newLi = document.createElement('li')
+        newLi.textContent = "Mojo"
+        secondLang.replaceWith(newLi)
+
+        //another edit
+        const firstLang = document.querySelector("li:first-child");
+        firstLang.outerHTML="<li> Balle Balle </li>"
+
+        //remove element in dom
+        const lastLang = document.querySelector("li:last-child")
+        lastLang.remove();
+
+</script>
+</html>

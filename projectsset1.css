@@ -1,0 +1,61 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.canvas {
+    justify-items: center;
+    align-items: center;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    border: 2px solid;
+    border-color: black;
+}
+
+#grey {
+    height: 60px;
+    width: 60px;
+    background-color: gray;
+}
+
+#white {
+    height: 60px;
+    width: 60px;
+    background-color: whitesmoke;
+}
+
+#blue {
+    height: 60px;
+    width: 60px;
+    background-color: blue;
+}
+
+#yellow {
+    height: 60px;
+    width: 60px;
+    background-color: yellow;
+}
+#purple {
+    height: 60px;
+    width: 60px;
+    background-color: purple;
+}
+
+a{
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: black;
+    padding: 10px;
+    border: 2px solid red;
+    margin-top: 20px;
+}
