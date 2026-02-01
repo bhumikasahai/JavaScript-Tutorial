@@ -283,6 +283,8 @@ console.log(visitedSet.has(user1)); // true
 user1 = null; // user1 is now removed from the WeakSet automatically.
 
 ```
+# DAY-3
+# LOOPS
 
 
 
