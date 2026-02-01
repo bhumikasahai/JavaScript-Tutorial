@@ -1,7 +1,4 @@
-# hello
-## hello 2
-
-Day-1
+#Day-1
 
 ```js
 // We use const for things that don't change
@@ -15,7 +12,7 @@ console.log(myGoal, currentLesson);
 ```
 
 
-DATATYPES 
+#DATATYPES 
 ```js
 
 //String: Text data
@@ -46,9 +43,9 @@ console.log(typeof true);    // Output: "boolean"
 Even though null is a Primitive type (as listed in your roadmap under "Primitive Types"), typeof null returns 'object'. This is a historical error in the language that can't be fixed now without breaking old websites. Just remember: logically, it is not an object.
 
 
-Day-2
+#Day-2
 
-Objects (The Non-Primitive)
+#Objects (The Non-Primitive)
 Unlike primitives (which hold just one value, like 5 or "Hello"), an Object is a collection of related data. Think of it like a physical backpack: the backpack is one "thing" (the Object), but inside it holds many items (properties) like a laptop, a book, and a water bottle.
 
 
@@ -67,7 +64,7 @@ There are two ways to get data out of the backpack:
 . Bracket Notation (Dynamic): student["firstName"]
 
 
-Type Conversion vs. Coercion
+#Type Conversion vs. Coercion
 The difference is simple but important:
 Type Conversion (Explicit): You manually tell JavaScript to change the type (e.g., "Turn this string into a number").
 Coercion (Implicit): JavaScript does it automatically behind your back because you did something weird (e.g., trying to subtract text from a number).
@@ -101,7 +98,7 @@ Boolean("hello"); // true
 
 ```
 
-Equality Comparisons
+#Equality Comparisons
 
 1. Loose Equality (==)
 This is the "forgiving" operator. It allows coercion. It tries to convert types to match before comparing.
@@ -122,7 +119,7 @@ NaN === NaN is actually false (weird, right?).
 Object.is(NaN, NaN) is true (correct).
 
 
-Data Structures
+#Data Structures
 1. Indexed Collections
 Indexed collections are data structures where data is ordered by an integer index (0, 1, 2...)
 
@@ -246,6 +243,8 @@ const numbers = [1, 2, 2, 3, 3, 3];
 const uniqueNumbers = [...new Set(numbers)]; // [1, 2, 3]
 
 ```
+
+
 
 
 
