@@ -120,7 +120,7 @@ Object.is(NaN, NaN) is true (correct).
 
 
 # Data Structures
-1. Indexed Collections
+1. Indexed Collections:
 Indexed collections are data structures where data is ordered by an integer index (0, 1, 2...)
 
 A. Arrays
@@ -197,7 +197,7 @@ console.log(userObj.name); // "User2"
 
 ```
 
-3. Keyed Collections
+3. Keyed Collections:
 These are collections that use "keys" to organize data, similar to Objects but with specialized behaviors.
 
 A. Map
@@ -243,6 +243,69 @@ const numbers = [1, 2, 2, 3, 3, 3];
 const uniqueNumbers = [...new Set(numbers)]; // [1, 2, 3]
 
 ```
+
+C. WeakMap
+A WeakMap is like a Map, but with two major differences:
+Keys must be Objects (not primitives like strings/numbers).
+Weak References: If the key object is deleted elsewhere in your code, it is automatically removed from the WeakMap by the Garbage Collector. It prevents memory leaks.
+
+```js
+let user = { name: "John" };
+
+const weakMap = new WeakMap();
+weakMap.set(user, "Secret Data");
+
+// If we delete the user object...
+user = null;
+
+// ...the "Secret Data" inside weakMap is automatically cleaned up from memory.
+// You cannot iterate over a WeakMap (no .forEach, no .size).
+
+```
+
+D. WeakSet
+Similar to WeakMap, but for Sets.
+Values must be Objects.
+Weak References: If the object is deleted elsewhere, it disappears from the Set.
+
+```js
+
+let visitedSet = new WeakSet();
+
+let user1 = { id: 1 };
+let user2 = { id: 2 };
+
+visitedSet.add(user1);
+visitedSet.add(user2);
+
+console.log(visitedSet.has(user1)); // true
+
+user1 = null; // user1 is now removed from the WeakSet automatically.
+
+```
+
+D. WeakSet
+Similar to WeakMap, but for Sets.
+Values must be Objects.
+Weak References: If the object is deleted elsewhere, it disappears from the Set.
+
+```js
+
+let visitedSet = new WeakSet();
+
+let user1 = { id: 1 };
+let user2 = { id: 2 };
+
+visitedSet.add(user1);
+visitedSet.add(user2);
+
+console.log(visitedSet.has(user1)); // true
+
+user1 = null; // user1 is now removed from the WeakSet automatically.
+
+```
+
+
 
 
 
