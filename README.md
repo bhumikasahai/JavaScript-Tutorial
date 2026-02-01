@@ -45,7 +45,7 @@ Even though null is a Primitive type (as listed in your roadmap under "Primitive
 
 # Day-2
 
-#Objects (The Non-Primitive)
+# Objects (The Non-Primitive)
 Unlike primitives (which hold just one value, like 5 or "Hello"), an Object is a collection of related data. Think of it like a physical backpack: the backpack is one "thing" (the Object), but inside it holds many items (properties) like a laptop, a book, and a water bottle.
 
 
@@ -120,10 +120,10 @@ Object.is(NaN, NaN) is true (correct).
 
 
 # Data Structures
-1. Indexed Collections:
+# 1. Indexed Collections:
 Indexed collections are data structures where data is ordered by an integer index (0, 1, 2...)
 
-A. Arrays
+# A. Arrays
 Standard JavaScript arrays are dynamic, meaning they can hold items of any type and change size automatically.
 
 Key Features:
@@ -150,7 +150,7 @@ console.log(stack.includes("Python")); // false
 
 ```
 
-B. Typed Arrays
+# B. Typed Arrays
 Unlike standard arrays, these are array-like buffers specifically designed to handle raw binary data. They are rarely used in general web dev but are critical for WebGL, Canvas, or processing audio/video.
 
 Key Features:
@@ -168,7 +168,7 @@ console.log(buffer); // Int8Array(8) [10, -1, 0, 0, ...]
 
 ```
 
-2. Structured Data
+# 2. Structured Data
 JSON (JavaScript Object Notation)
 JSON is a text-based format for representing structured data. It is the standard for API communication.
 
@@ -197,10 +197,10 @@ console.log(userObj.name); // "User2"
 
 ```
 
-3. Keyed Collections:
+# 3. Keyed Collections:
 These are collections that use "keys" to organize data, similar to Objects but with specialized behaviors.
 
-A. Map
+# A. Map
 A Map is a collection of keyed data items, similar to an Object. However, the main difference is that Map keys can be of any type (objects, functions, primitives), whereas Object keys are always Strings or Symbols.
 Methods: .set(), .get(), .has(), .delete(), .size
 
@@ -223,7 +223,7 @@ console.log(myMap.get(keyObj)); // "Value associated with object"
 
 ```
 
-B. Set
+# B. Set
 A Set is a collection of values where each value may only occur once. If you try to add a duplicate, it is ignored.
 Use Case: Removing duplicates from an array.
 Methods: .add(), .has(), .delete(), .size.
@@ -244,7 +244,7 @@ const uniqueNumbers = [...new Set(numbers)]; // [1, 2, 3]
 
 ```
 
-C. WeakMap
+# C. WeakMap
 A WeakMap is like a Map, but with two major differences:
 Keys must be Objects (not primitives like strings/numbers).
 Weak References: If the key object is deleted elsewhere in your code, it is automatically removed from the WeakMap by the Garbage Collector. It prevents memory leaks.
@@ -263,7 +263,7 @@ user = null;
 
 ```
 
-D. WeakSet
+# D. WeakSet
 Similar to WeakMap, but for Sets.
 Values must be Objects.
 Weak References: If the object is deleted elsewhere, it disappears from the Set.
@@ -284,26 +284,6 @@ user1 = null; // user1 is now removed from the WeakSet automatically.
 
 ```
 
-D. WeakSet
-Similar to WeakMap, but for Sets.
-Values must be Objects.
-Weak References: If the object is deleted elsewhere, it disappears from the Set.
-
-```js
-
-let visitedSet = new WeakSet();
-
-let user1 = { id: 1 };
-let user2 = { id: 2 };
-
-visitedSet.add(user1);
-visitedSet.add(user2);
-
-console.log(visitedSet.has(user1)); // true
-
-user1 = null; // user1 is now removed from the WeakSet automatically.
-
-```
 
 
 
