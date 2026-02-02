@@ -286,6 +286,60 @@ user1 = null; // user1 is now removed from the WeakSet automatically.
 # DAY-3
 # LOOPS
 
+# 1. The Standard Loops (The Classics)
+
+# A. The for loop
+
+```js
+
+// Syntax: for (start; condition; step)
+for (let i = 0; i < 5; i++) {
+    console.log("Iteration number:", i);
+}
+
+```
+
+# B. The while loop
+
+```js 
+
+let battery = 10;
+
+while (battery > 0) {
+    console.log("Phone is on. Battery:", battery);
+    battery--; // Don't forget this, or you get an infinite loop!
+}
+
+```
+
+# C. The do...while loop
+
+```js
+
+let count = 100;
+
+do {
+    console.log("This prints once even though count is not < 5");
+} while (count < 5);
+
+```
+
+# 2. The Modern Loops (The "JavaScript Way")
+
+# A. The for...of loop
+The best way to loop through Arrays or Strings. It gives you the value directly.
+
+```js
+
+const colors = ["Red", "Green", "Blue"];
+
+// "For every color OF the colors list..."
+for (const color of colors) {
+    console.log(color); 
+}
+// Output: Red, Green, Blue
+
+```
 
 
 
