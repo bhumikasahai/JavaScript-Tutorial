@@ -1,5 +1,5 @@
 # Day-1
-
+# Use of (const,let)
 ```js
 // We use const for things that don't change
 const myGoal = "Become a JS Developer";
@@ -13,6 +13,8 @@ console.log(myGoal, currentLesson);
 
 
 # DATATYPES 
+# Primitive Dataypes
+
 ```js
 
 //String: Text data
