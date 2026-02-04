@@ -342,9 +342,57 @@ for (const color of colors) {
 // Output: Red, Green, Blue
 
 ```
+# B. The for...in loop
+Designed for Objects. It iterates over the Keys (property names).
 
+```js
+const user = { name: "Gemini", role: "Trainer", level: 99 };
 
+// "For every key IN the user object..."
+for (const key in user) {
+    console.log(key, "->", user[key]); 
+}
+// Output:
+// name -> Gemini
+// role -> Trainer
+// level -> 99
 
+```
+
+Critical Rule: Use for...of for Arrays (Values). Use for...in for Objects (Keys).
+
+# 3. Control Keywords
+break: "Stop the loop immediately and leave."
+continue: "Skip the rest of this round and start the next one."
+
+```js
+for (let i = 0; i < 10; i++) {
+    if (i === 2) continue; // Skip 2
+    if (i === 5) break;    // Stop at 5 (don't reach 6, 7...)
+    console.log(i);
+}
+// Output: 0, 1, 3, 4
+```
+
+# Control Flow in JavaScript
+
+# 1. Conditional Statements
+
+# A. if...else
+ogic: "If this condition is true, do X. Otherwise, do Y."
+else if: Used to check multiple conditions in a chain.
+
+```js
+const hour = 14;
+
+if (hour < 12) {
+    console.log("Good Morning");
+} else if (hour < 18) {
+    console.log("Good Afternoon");
+} else {
+    console.log("Good Evening");
+}
+```
 
 
 
