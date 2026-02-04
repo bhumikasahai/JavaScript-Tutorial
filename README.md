@@ -373,6 +373,7 @@ for (let i = 0; i < 10; i++) {
 }
 // Output: 0, 1, 3, 4
 ```
+# Day-4
 
 # Control Flow in JavaScript
 
@@ -393,6 +394,65 @@ if (hour < 12) {
     console.log("Good Evening");
 }
 ```
+
+# B. switch
+A cleaner alternative to many else if statements when you are comparing one variable against multiple fixed values.
+Key Rule: It uses Strict Equality (===) internally.
+break: Critical keyword. If you forget it, the code "falls through" to the next case automatically.
+default: Acts like the final else (runs if nothing matches).
+
+```js
+const role = "admin";
+
+switch (role) {
+    case "admin":
+        console.log("Full Access Granted");
+        break; // Stop here!
+    case "editor":
+        console.log("Edit Access Granted");
+        break;
+    case "guest":
+        console.log("Read Only Access");
+        break;
+    default:
+        console.log("Unknown Role - Access Denied");
+}
+```
+
+# 2. Exceptional Handling
+
+# A. throw statement
+Used to manually trigger an error. You can throw a string, number, or object, but it is best practice to throw an Error object.
+
+```js
+function checkAge(age) {
+    if (age < 0) {
+        throw new Error("Age cannot be negative!"); // Stops execution immediately
+    }
+    return true;
+}
+```
+
+# B. try / catch / finally
+The safety net for your code.
+try: "Attempt to run this risky code."
+catch: "If the risky code crashes, run this block instead (don't kill the app)."
+finally: "Run this block no matter what happened (success or failure).
+
+```js
+try {
+    // 1. Risky code
+    let data = JSON.parse("Invalid JSON String"); 
+    console.log("Success!"); // This line will never run
+} catch (err) {
+    // 2. Error handling
+    console.log("Something went wrong:", err.message);
+} finally {
+    // 3. Cleanup (always runs)
+    console.log("Operation complete.");
+}
+```
+
 
 
 
