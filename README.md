@@ -452,9 +452,21 @@ try {
     console.log("Operation complete.");
 }
 ```
+# C. Error Objects
+JavaScript has a built-in Error object that provides details about what went wrong.
+Properties:
+name: The type of error (e.g., "ReferenceError", "SyntaxError").
+message: The description you passed when creating it.
+stack: A trace of where the error happened (useful for debugging).
 
+```js
+const myError = new Error("Something broke");
 
+console.log(myError.name);    // "Error"
+console.log(myError.message); // "Something broke"
+```
 
+# Day-5
 
 
 
