@@ -467,7 +467,127 @@ console.log(myError.message); // "Something broke"
 ```
 
 # Day-5
+# Expressions and Operators
 
+# 1. Assignment Operators
+These assign values to variables. You already know =, but there are shortcuts.
+= (Simple Assignment): x = 10
++= (Add and Assign): x += 5 is the same as x = x + 5
+-= (Subtract and Assign): x -= 2
+*= (Multiply and Assign): x *= 2
 
+```js
+let score = 10;
+score += 5; // score is now 15
+score *= 2; // score is now 30
+```
 
+# 2. Arithmetic Operators
+Standard math.+, -, *, /% 
+(Modulus): Returns the remainder of division.Very useful for checking even/odd numbers.
+** (Exponentiation): Power of. 2 ** 3 is 8 ($2^3$).
+++ / --: Increment or decrement by 1.
 
+```js
+console.log(10 % 3); // 1 (Because 10 divided by 3 is 3 with a remainder of 1)
+console.log(2 ** 4); // 16
+```
+
+# 3. Comparison Operators
+We covered these in the "Equality" section, but here is the full list.
+== / != (Loose equality/inequality - allows coercion)
+=== / !== (Strict equality/inequality - checks type)
+>, <, >=, <= (Greater/Less than)
+
+# 4. Logical Operators
+Used to combine multiple boolean checks.
+&& (AND): Returns true only if both sides are true.
+|| (OR): Returns true if at least one side is true.
+! (NOT): Flips true to false (and vice versa).
+
+```js
+let age = 20;
+let hasID = true;
+
+if (age >= 18 && hasID) {
+    console.log("Allowed");
+}
+```
+
+# 5. Unary Operators
+Operators that work on only one operand.
+typeof: Returns the type (e.g., typeof "hi" -> "string").
++ (Unary Plus): Tries to convert the operand to a number.
++"5" becomes the number 5.
+- (Unary Negation): Negates the value.
+-x (if x was 5, it becomes -5).
+delete: Removes a property from an object
+
+# 6. Conditional (Ternary) Operator
+This is a shortcut for if...else. It's the only operator that takes three operands.
+Syntax: condition ? valueIfTrue : valueIfFalse
+
+```js
+let age = 20;
+//                  Condition  ?   True val  : False val
+let status = (age >= 18) ? "Adult" : "Minor";
+console.log(status); // "Adult"
+```
+
+# 7. Bitwise & BigInt Operators (Advanced)
+Bitwise (&, |, ^, ~, <<, >>): Operate on the binary bits of numbers (e.g., comparing 0101 and 0011). You rarely use these in web dev unless you are doing graphics or low-level encoding.
+
+BigInt: Operators for massive numbers (suffixed with n). You can't mix BigInts with regular numbers in math!
+
+# 8. String Operators
+# A. Concatenation (+)
+The + operator has a dual personality. If you use it with numbers, it adds. If you use it with strings, it joins (glues them together).
+Rule: If any operand is a string, the result is a string.
+
+```js
+let firstName = "Gemini";
+let greeting = "Hello, " + firstName + "!"; // "Hello, Gemini!"
+```
+
+# B. Concatenation Assignment (+=)
+ust like x += 5 adds 5 to a number, text += " more" appends text to the end of a string.
+
+```js
+let story = "Once upon a time...";
+story += " The End.";
+console.log(story); // "Once upon a time... The End."
+```
+
+# C. String Comparison (>, <)
+C. String Comparison (>, <)
+You can compare strings alphabetically (lexicographically).
+"Z" is greater than "A".
+"Banana" is greater than "Apple" (because B comes after A).
+Warning: Capital letters are "smaller" than lowercase letters (ASCII rule). "a" > "Z" is true.
+
+# 9. Comma Operators
+This is one of the most obscure and misunderstood operators in JavaScript.
+The Syntax: expr1, expr2, expr3...
+The Rule: It evaluates every expression from left to right, but it returns only the last one.
+Use Case 1: The "Weird" Assignment (Rare)
+You almost never see this in production code, but it works:
+
+```js
+// JS calculates 1+1, then 5+5, then assigns 10 to 'x'
+let x = (1 + 1, 5 + 5); 
+
+console.log(x); // 10 (The last value)
+```
+
+Use Case 2: The for Loop (Common)
+This is the only place comma operators are regularly used. It allows you to update two variables at once inside a loop.
+```js
+// i goes UP, j goes DOWN
+for (let i = 0, j = 10; i < j; i++, j--) {
+    console.log(`i: ${i}, j: ${j}`);
+}
+// Output:
+// i: 0, j: 10
+// i: 1, j: 9
+// ...
+```
