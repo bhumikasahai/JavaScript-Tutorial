@@ -120,6 +120,38 @@ This is a newer method mentioned in your roadmap. It acts almost exactly like ==
 NaN === NaN is actually false (weird, right?).
 Object.is(NaN, NaN) is true (correct).
 
+# Equality Algorithms
+
+# isLooselyEqual(==)
+This is the algorithm behind the Loose Equality operator.
+The Logic: It allows Type Coercion. If the types are different, it tries to convert them to match before comparing.
+
+The Weirdness:
+"5" == 5 is true.
+null == undefined is true.
+[] == 0 is true (An empty array converts to an empty string "", which converts to 0).
+
+# 2. isStrictlyEqual (===)
+This is the algorithm behind the Strict Equality operator.
+The Logic: It compares Type AND Value. No conversion allowed.
+The Flaw: It has a historical bug where it says NaN (Not a Number) is not equal to itself.
+NaN === NaN is false.
++0 === -0 is true.
+
+# 3. SameValue (Object.is)
+This is the most precise algorithm. It is exposed via the method Object.is(a, b).
+The Logic: It is identical to Strict Equality, but it fixes the "bugs."
+The Fixes:
+NaN is equal to NaN -> true.
++0 is not equal to -0 -> false (Important for physics/math engines).
+
+# 4. SameValueZero (The Internal Hero)
+You cannot call this directly as a function, but JavaScript uses it internally for data structures like Arrays (includes), Maps, and Sets.
+The Logic: It is a hybrid of the previous two.
+It treats NaN as equal to NaN (Like SameValue).
+It treats +0 as equal to -0 (Like isStrictlyEqual).
+Why it matters: This is why [NaN].includes(NaN) works (returns true), even though NaN === NaN fails.
+
 
 # Data Structures
 # 1. Indexed Collections:
